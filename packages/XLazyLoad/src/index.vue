@@ -3,6 +3,8 @@
 </template>
 
 <script>
+import { nextTick } from 'vue';
+
 export default {
   name: 'XLazyLoad',
   props: {
@@ -25,7 +27,7 @@ export default {
   },
   methods: {
     setObserve() {
-      this.$nextTick(() => {
+      nextTick(() => {
         Array.from(document.querySelectorAll(`.${this.domClass}`)).forEach((dom) => {
           this.lazyIns.observe(dom);
         });
@@ -40,7 +42,7 @@ export default {
     },
   },
   mounted() {
-    this.$nextTick(() => {
+    nextTick(() => {
       this.lazyIns = new IntersectionObserver((changes) => {
         changes.forEach((change) => {
           if (change.intersectionRatio > 0) {

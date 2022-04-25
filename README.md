@@ -1,7 +1,7 @@
 # x-lazy-load-vue
 
 ## 版本
-- v1.0.0
+- v1.0.2
 
 ## 基于
 - vue3
@@ -13,16 +13,11 @@ npm install x-lazy-load-vue3
 ````
 
 ## 使用
-**在main.js中引入**
-````
-import XLazyLoad from 'x-lazy-load-vue';
-
-Vue.use(XLazyLoad)
-````
-
 **组件中使用**
 
 ````
+import XLazyLoad from 'x-lazy-load-vue3';
+
 <x-lazy-load
   :dom-class="lazy-dom"
   :dom-attrs="['ids']"
