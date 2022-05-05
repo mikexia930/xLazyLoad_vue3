@@ -58,10 +58,13 @@ export default {
               }
               if (loadTimes < this.times) {
                 this.setTimes(lazyId);
+                attrValues[lazyId] = {};
                 this.domAttrs.forEach((attr) => {
-                  attrValues[lazyId] = {
-                    [attr]: targetDom[attr].value,
-                  };
+                  let curValue = '';
+                  if (targetDom[attr]) {
+                    curValue = targetDom[attr].value;
+                  }
+                  attrValues[lazyId][attr] = curValue;
                 });
                 this.$emit('handleLazyData', attrValues);
               }

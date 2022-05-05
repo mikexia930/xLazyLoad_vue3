@@ -1,7 +1,7 @@
 # x-lazy-load-vue
 
 ## 版本
-- v1.0.2
+- v1.0.3
 
 ## 基于
 - vue3
@@ -25,8 +25,8 @@ import XLazyLoad from 'x-lazy-load-vue3';
   :had-mounted-number="mountedNumber"
   @handleLazyData="handleLazyData"
 >
-    //slot的内容，layzid是返回结果里的key，必须填写！！！！
-    <div lazyid='id'></div>
+    // slot的内容，确保 lazyid 对应属性的值唯一；layzid 的值也是返回结果里的key，必须填写！！！！
+    <div lazyid='id' id='dom1'></div>
 </x-lazy-load>
 ````
 
